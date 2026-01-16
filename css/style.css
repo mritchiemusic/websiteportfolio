@@ -6,16 +6,12 @@ body {
 
 /* NAV */
 nav {
-  background: #111;
-}
-
-nav ul {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 24px;
   padding: 16px 24px;
-  margin: 0;
-  list-style: none;
+  background: #111;
 }
 
 nav a {
