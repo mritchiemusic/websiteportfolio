@@ -5,9 +5,13 @@ body {
 }
 
 nav {
-  padding: 16px;
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  gap: 24px;
+  padding: 16px 24px;
   background: #111;
 }
+
 
 nav a {
   color: white;
