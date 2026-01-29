@@ -33,6 +33,12 @@ nav a {
   padding: 40px 20px;
 }
 
+/* Global heading tweaks */
+h3 {
+  font-size: 0.8rem;
+  margin: 0 0 0.5rem 0;
+}
+
 .social-links {
   display: flex;
   flex-direction: column;
@@ -109,7 +115,7 @@ nav a {
 }
 
 .overlay h3 {
-  font-size: 0.85rem; /* Smaller */
+  font-size: 0.7rem; /* Smaller */
   margin: 0 0 2px 0;
   text-transform: uppercase; /* Optional: makes small text easier to read */
   letter-spacing: 0.5px;
