@@ -76,9 +76,9 @@ nav a {
 }
 
 .portfolio-item img {
-  width: 400px;
-  height: 400px;
-  object-fit: cover; /* Prevents image distortion */
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Prevents image distortion */
   display: block;
 }
 
