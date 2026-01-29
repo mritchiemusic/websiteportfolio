@@ -82,23 +82,42 @@ nav a {
   display: block;
 }
 
-/* The Overlay (Hidden by default) */
+/* The Overlay Container */
 .overlay {
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
-  right: 0;
-  height: 100%;
   width: 100%;
-  opacity: 0; /* Makes it invisible */
+  height: 100%;
+  opacity: 0;
   transition: .5s ease;
-  background-color: rgba(0, 0, 0, 0.7); /* Black with 70% transparency */
+  background-color: rgba(0, 0, 0, 0.7);
+  
+  /* Change these to move text to Top-Left */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 15px;
+  align-items: flex-start;    /* Vertical: Top */
+  justify-content: flex-start; /* Horizontal: Left */
+  
+  /* The "Buffer" - adjust this to move text further from the edge */
+  padding: 20px; 
+  box-sizing: border-box; /* Crucial: keeps padding inside the 100% width */
+}
+
+/* Styling the text inside */
+.overlay .text {
+  color: white;
+  text-align: left; /* Ensures lines of text start on the left */
+}
+
+.overlay h3 {
+  font-size: 1.1rem; /* Smaller heading */
+  margin: 0 0 5px 0; /* Tighten spacing */
+}
+
+.overlay p {
+  font-size: 0.9rem; /* Smaller description */
+  margin: 0;
+  line-height: 1.4; /* Better readability */
 }
 
 /* Show overlay on hover */
