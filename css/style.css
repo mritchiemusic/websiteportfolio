@@ -59,3 +59,53 @@ nav a {
   height: 20px;
   fill: currentColor;
 }
+
+/* Container for the 3-column grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 20px; /* Space between images */
+  padding: 20px;
+}
+
+/* Individual Project Square */
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1; /* Makes the link a perfect square */
+}
+
+.portfolio-item img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover; /* Prevents image distortion */
+  display: block;
+}
+
+/* The Overlay (Hidden by default) */
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0; /* Makes it invisible */
+  transition: .5s ease;
+  background-color: rgba(0, 0, 0, 0.7); /* Black with 70% transparency */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+}
+
+/* Show overlay on hover */
+.portfolio-item:hover .overlay {
+  opacity: 1;
+}
+
+.overlay .text {
+  color: white;
+}
