@@ -81,6 +81,11 @@ function openProject(title, description, imagePath) {
   window.onclick = (event) => {
     if (event.target == modal) modal.style.display = "none";
   }
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    document.getElementById("projectModal").style.display = "none";
+  }
+});
 </script>
 
 </body>
