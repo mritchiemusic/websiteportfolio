@@ -82,7 +82,6 @@ nav a {
   display: block;
 }
 
-/* The Overlay Container */
 .overlay {
   position: absolute;
   top: 0;
@@ -93,37 +92,31 @@ nav a {
   transition: .5s ease;
   background-color: rgba(0, 0, 0, 0.7);
   
-  /* Flexbox settings for Bottom-Left */
   display: flex;
-  flex-direction: column;   /* Stack H3 and P vertically */
-  justify-content: flex-end; /* Horizontal: Pins content to the left (default) */
-  align-items: flex-start;   /* Vertical: Pins content to the bottom */
+  flex-direction: column; 
+  /* In COLUMN mode: */
+  justify-content: flex-end; /* Vertical: Pushes text to the BOTTOM */
+  align-items: flex-start;    /* Horizontal: Pushes text to the LEFT */
   
-  /* Buffer from the edges */
-  padding: 15px; 
-  box-sizing: border-box; 
+  padding: 12px; 
+  box-sizing: border-box;
+  pointer-events: none; /* Helps ensure the hover trigger isn't blocked */
 }
 
-/* Make text smaller */
 .overlay .text {
   color: white;
-  text-align: left;
+  width: 100%; /* Ensures text takes up full width for left-alignment */
 }
 
 .overlay h3 {
-  font-size: 0.95rem; /* Smaller heading */
-  margin: 0 0 4px 0;
-  font-weight: 600;
+  font-size: 0.85rem; /* Smaller */
+  margin: 0 0 2px 0;
+  text-transform: uppercase; /* Optional: makes small text easier to read */
+  letter-spacing: 0.5px;
 }
 
 .overlay p {
-  font-size: 0.75rem; /* Very small, clean description */
+  font-size: 0.7rem; /* Very small */
   margin: 0;
-  line-height: 1.3;
-  opacity: 0.9; /* Slightly faded for a modern look */
-}
-
-/* Show on hover */
-.project-item:hover .overlay {
-  opacity: 1;
+  line-height: 1.2;
 }
