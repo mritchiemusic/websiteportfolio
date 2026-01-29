@@ -173,4 +173,10 @@ h3 {
   max-width: 900px;
   height: auto;
   display: block;
+  box-sizing: border-box;
+}
+
+.container p img {
+  width: 100%;
+  max-width: 100%;
 }
