@@ -93,38 +93,37 @@ nav a {
   transition: .5s ease;
   background-color: rgba(0, 0, 0, 0.7);
   
-  /* Change these to move text to Top-Left */
+  /* Flexbox settings for Bottom-Left */
   display: flex;
-  align-items: flex-start;    /* Vertical: Top */
-  justify-content: flex-start; /* Horizontal: Left */
+  flex-direction: column;   /* Stack H3 and P vertically */
+  justify-content: flex-end; /* Horizontal: Pins content to the left (default) */
+  align-items: flex-start;   /* Vertical: Pins content to the bottom */
   
-  /* The "Buffer" - adjust this to move text further from the edge */
-  padding: 20px; 
-  box-sizing: border-box; /* Crucial: keeps padding inside the 100% width */
+  /* Buffer from the edges */
+  padding: 15px; 
+  box-sizing: border-box; 
 }
 
-/* Styling the text inside */
+/* Make text smaller */
 .overlay .text {
   color: white;
-  text-align: left; /* Ensures lines of text start on the left */
+  text-align: left;
 }
 
 .overlay h3 {
-  font-size: 1.1rem; /* Smaller heading */
-  margin: 0 0 5px 0; /* Tighten spacing */
+  font-size: 0.95rem; /* Smaller heading */
+  margin: 0 0 4px 0;
+  font-weight: 600;
 }
 
 .overlay p {
-  font-size: 0.9rem; /* Smaller description */
+  font-size: 0.75rem; /* Very small, clean description */
   margin: 0;
-  line-height: 1.4; /* Better readability */
+  line-height: 1.3;
+  opacity: 0.9; /* Slightly faded for a modern look */
 }
 
-/* Show overlay on hover */
-.portfolio-item:hover .overlay {
+/* Show on hover */
+.project-item:hover .overlay {
   opacity: 1;
-}
-
-.overlay .text {
-  color: white;
 }
