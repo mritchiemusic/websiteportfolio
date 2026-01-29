@@ -166,3 +166,11 @@ h3 {
   font-size: 30px;
   cursor: pointer;
 }
+
+/* Responsive Image */
+.responsive-image {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+}
