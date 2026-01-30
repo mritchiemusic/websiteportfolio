@@ -352,3 +352,13 @@ h3 {
   width: 100%;
   max-width: 100%;
 }
+
+/* Mobile-only: make portfolio and album grids 2 columns with smaller gap */
+@media (max-width: 600px) {
+  .portfolio-grid,
+  .album-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 12px;
+  }
+}
