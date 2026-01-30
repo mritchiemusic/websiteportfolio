@@ -253,17 +253,45 @@
   const closeBtn = document.querySelector(".close-button");
 
   // Function to open modal
-function openProject(title, description, imagePath) {
-  const modalBody = document.getElementById("modal-body");
-  
-  modalBody.innerHTML = `
-    <img src="${imagePath}" style="width:100%; border-radius: 4px; margin-bottom: 20px;">
-    <h2>${title}</h2>
-    <p style="font-size: 1.1rem; line-height: 1.6; color: #444;">${description}</p>
-  `;
-  
-  document.getElementById("projectModal").style.display = "block";
-}
+  function openProject(title, descriptionArg, imagePath) {
+    const modalBody = document.getElementById("modal-body");
+
+    // Try to find the clicked portfolio item to extract medium/company/role if present
+    const items = Array.from(document.querySelectorAll('.portfolio-item'));
+    const matched = items.find(it => {
+      const h3 = it.querySelector('h3');
+      const img = it.querySelector('img');
+      const imgSrc = img ? img.getAttribute('src') : '';
+      return (h3 && h3.textContent.trim() === title) || (imgSrc && (imgSrc === imagePath || imgSrc.endsWith(imagePath)));
+    });
+
+    let medium = '';
+    let company = '';
+    let role = '';
+    let description = descriptionArg || '';
+
+    if (matched) {
+      const p = matched.querySelector('.overlay p');
+      if (p) medium = p.textContent.trim();
+      company = matched.getAttribute('data-company') || '';
+      role = matched.getAttribute('data-role') || '';
+    }
+
+    modalBody.innerHTML = `
+      <div class="modal-inner">
+        <div class="modal-image"><img src="${imagePath}" alt="${title}"></div>
+        <div class="modal-info">
+          <h2 class="modal-title">${title}</h2>
+          <p><strong>Medium:</strong> ${medium}</p>
+          <p><strong>Company:</strong> ${company}</p>
+          <p><strong>Role:</strong> ${role}</p>
+          <p class="modal-desc">${description}</p>
+        </div>
+      </div>
+    `;
+
+    document.getElementById("projectModal").style.display = "block";
+  }
 
   // Close when clicking 'X'
   closeBtn.onclick = () => modal.style.display = "none";

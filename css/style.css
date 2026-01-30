@@ -330,6 +330,55 @@ h3 {
   color: #333;
 }
 
+/* Modal inner layout: image left (300px) and text on the right */
+.modal-inner {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.modal-image img {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+.modal-info {
+  flex: 1 1 auto;
+}
+
+.modal-info .modal-title {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.modal-info .modal-desc {
+  margin-top: 12px;
+  color: #444;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    padding: 20px;
+    width: 92%;
+    max-width: 720px;
+  }
+
+  .modal-inner {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .modal-image img {
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+  }
+}
+
 /* The 'X' Button */
 .close-button {
   position: absolute;
