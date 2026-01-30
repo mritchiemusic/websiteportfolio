@@ -277,15 +277,19 @@
       role = matched.getAttribute('data-role') || '';
     }
 
+    // Build info lines showing only values (no labels). Skip empties.
+    const infoParts = [];
+    if (medium) infoParts.push(`<p class="meta">${medium}</p>`);
+    if (company) infoParts.push(`<p class="meta">${company}</p>`);
+    if (role) infoParts.push(`<p class="meta">${role}</p>`);
+    infoParts.push(`<p class="modal-desc">${description}</p>`);
+
     modalBody.innerHTML = `
       <div class="modal-inner">
         <div class="modal-image"><img src="${imagePath}" alt="${title}"></div>
         <div class="modal-info">
-          <h2 class="modal-title">${title}</h2>
-          <p><strong>Medium:</strong> ${medium}</p>
-          <p><strong>Company:</strong> ${company}</p>
-          <p><strong>Role:</strong> ${role}</p>
-          <p class="modal-desc">${description}</p>
+          <h1 class="modal-title">${title}</h1>
+          ${infoParts.join('')}
         </div>
       </div>
     `;

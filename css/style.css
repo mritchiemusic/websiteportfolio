@@ -33,7 +33,7 @@ nav a {
   padding: 40px 20px;
 }
 
-/* About Section - Image Left, Text Right */
+/* ABOUT */
 .about-section {
   display: block;
   margin-top: 40px;
@@ -60,7 +60,7 @@ nav a {
   order: 2;
 }
 
-/* Global heading tweaks */
+/* GLOBAL HEADING */
 h1, h2 {
   text-align: center;
   font-weight: normal;
@@ -85,6 +85,7 @@ h3 {
   margin-top: 40px;
 }
 
+/* SOCIAL */
 .social-links {
   display: flex;
   flex-direction: column;
@@ -147,6 +148,7 @@ h3 {
   object-fit: contain;
 }
 
+/* MUSIC */
 .music-links {
   display: flex;
   justify-content: center;
@@ -175,7 +177,7 @@ h3 {
   object-fit: contain;
 }
 
-/* Album Grid */
+/* ALBUMS */
 .album-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -352,12 +354,24 @@ h3 {
 .modal-info .modal-title {
   margin-top: 0;
   margin-bottom: 8px;
+  text-align: left; /* Override global centering for modal title */
+ font-size: 1.2rem;
 }
 
 .modal-info .modal-desc {
   margin-top: 12px;
   color: #444;
   line-height: 1.5;
+}
+.modal-info .meta {
+  font-size: 0.8rem;
+  margin: 4px 0;
+}
+.modal-info .modal-desc {
+  margin-top: 12px;
+  color: #444;
+  line-height: 1.5;
+  font-size: 0.8rem;
 }
 
 @media (max-width: 600px) {
