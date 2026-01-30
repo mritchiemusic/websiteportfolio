@@ -36,15 +36,18 @@ nav a {
 /* About Section - Image Left, Text Right */
 .about-section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto;
   gap: 40px;
-  align-items: center;
+  align-items: start;
   margin-top: 40px;
+  width: 100%;
 }
 
 .about-image {
   width: 100%;
   height: auto;
+  order: 1;
 }
 
 .about-image img {
@@ -56,6 +59,7 @@ nav a {
 
 .about-text {
   width: 100%;
+  order: 2;
 }
 
 /* Global heading tweaks */
@@ -66,7 +70,7 @@ h3 {
 
 .contact-section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   gap: 40px;
   align-items: center;
   margin-top: 40px;
