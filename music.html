@@ -133,6 +133,14 @@ document.querySelectorAll('audio').forEach(track => {
     this.parentElement.classList.remove('playing');
   };
 });
+
+document.querySelectorAll('audio').forEach(track => {
+  track.onended = function() {
+    this.currentTime = 0; 
+    this.parentElement.classList.remove('playing');
+  };
+});
+
   </script>
 
 
