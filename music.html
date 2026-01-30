@@ -114,7 +114,6 @@ function toggleAudio(id) {
   allAudios.forEach(track => {
     if (track !== audio) {
       track.pause();
-      track.currentTime = 0;
       track.parentElement.classList.remove('playing'); // Remove icon from others
     }
   });
