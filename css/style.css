@@ -35,11 +35,7 @@ nav a {
 
 /* About Section - Image Left, Text Right */
 .about-section {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: auto;
-  gap: 40px;
-  align-items: start;
+  display: block;
   margin-top: 40px;
   width: 100%;
 }
