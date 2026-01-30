@@ -139,6 +139,12 @@ h3 {
   fill: currentColor;
 }
 
+.contact-links img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
 .music-links {
   display: flex;
   justify-content: center;
