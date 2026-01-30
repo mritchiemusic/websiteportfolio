@@ -105,6 +105,34 @@ h3 {
   fill: currentColor;
 }
 
+.music-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.music-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.music-links a:hover {
+  opacity: 0.7;
+}
+
+.music-links svg {
+  width: 40px;
+  height: 40px;
+  fill: currentColor;
+}
+
 .contact-image {
   width: 100%;
   height: auto;
