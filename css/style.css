@@ -59,6 +59,10 @@ nav a {
 }
 
 /* Global heading tweaks */
+h1, h2 {
+  text-align: center;
+}
+
 h3 {
   font-size: 0.8rem;
   margin: 0 0 0.5rem 0;
