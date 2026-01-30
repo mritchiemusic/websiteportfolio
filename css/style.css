@@ -177,7 +177,7 @@ h3 {
   object-fit: contain;
 }
 
-/* ALBUMS - Your existing grid logic */
+/* ALBUMS */
 .album-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -201,7 +201,6 @@ h3 {
   transition: transform 0.4s ease; /* Smooth zoom on hover */
 }
 
-/* NEW: The Transparent Overlay */
 .album-overlay {
   position: absolute;
   top: 0;
@@ -225,11 +224,27 @@ h3 {
   transform: scale(1.05); /* Subtle zoom effect */
 }
 
+/* 1. Base style for the icon */
 .play-icon {
   color: white;
   font-size: 40px;
-  pointer-events: none; /* Ensures the click registers on the div */
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+/* 2. Default state: Play */
+.play-icon::before {
+  content: "▶";
+}
+
+/* 3. Playing state: Switch content to Pause */
+/* This overrides the content above, so no "doubling" happens */
+.album-item.playing .play-icon::before {
+  content: "⏸";
+}
+
 
 .contact-image {
   width: 100%;

@@ -52,25 +52,49 @@
       <div class="album-item" onclick="toggleAudio('Aura')">
         <img src="photos/albums/album_aura.jpeg" alt="Aura">
         <div class="album-overlay">
-          <span class="play-icon">▶</span>
+          <span class="play-icon"></span>
         </div>
         <audio id="Aura" src="music/aura.mp3"></audio>
       </div>     
 
-      <div class="album-item">
-        <img src="photos/albums/album_deltawaves.jpeg" alt="Delta Waves Album">
-      </div>    
-      <div class="album-item">
-        <img src="photos/albums/album_visiblelight.jpg" alt="Visible Light Album">
+      <div class="album-item" onclick="toggleAudio('Delta Waves')">
+        <img src="photos/albums/album_deltawaves.jpeg" alt="Delta Waves">
+        <div class="album-overlay">
+          <span class="play-icon"></span>
+        </div>
+        <audio id="Delta Waves" src="music/deltawaves.mp3"></audio>
+      </div> 
+
+      <div class="album-item" onclick="toggleAudio('Visible Light')">
+        <img src="photos/albums/album_visiblelight.jpg" alt="Visible Light">
+        <div class="album-overlay">
+          <span class="play-icon"></span>
+        </div>
+        <audio id="Visible Light" src="music/visiblelight_awakeawhiel.mp3"></audio>
       </div>
-      <div class="album-item">
-        <img src="photos/albums/album_forestman.jpg" alt="Forestman Album">
+      
+      <div class="album-item" onclick="toggleAudio('Forestman')">
+        <img src="photos/albums/album_forestman.jpg" alt="Forestman">
+        <div class="album-overlay">
+          <span class="play-icon"></span>
+        </div>
+        <audio id="Forestman" src="music/forestman_majuli.mp3"></audio>
       </div>
-      <div class="album-item">
-        <img src="photos/albums/album_sentimentalist.jpg" alt="Sentimentalist Album">
-      </div>      
-      <div class="album-item">
-        <img src="photos/albums/album_wheatland.jpg" alt="Wheatland Album">
+
+      <div class="album-item" onclick="toggleAudio('Sentimentalist')">
+        <img src="photos/albums/album_sentimentalist.jpg" alt="Sentimentalist">
+        <div class="album-overlay">
+          <span class="play-icon"></span>
+        </div>
+        <audio id="Sentimentalist" src="music/sentamentalists.mp3"></audio>
+      </div>
+
+      <div class="album-item" onclick="toggleAudio('Wheatland')">
+        <img src="photos/albums/album_wheatland.jpg" alt="Wheatland">
+        <div class="album-overlay">
+          <span class="play-icon"></span>
+        </div>
+        <audio id="Wheatland" src="music/wheatland_finitemoonlight.mp3"></audio>
       </div>
     </div>
 
@@ -84,23 +108,32 @@
   <script>
 function toggleAudio(id) {
   const audio = document.getElementById(id);
+  const parentCard = audio.parentElement; // Finds the .album-item
   const allAudios = document.querySelectorAll('audio');
 
-  // Stop all other tracks from playing
   allAudios.forEach(track => {
     if (track !== audio) {
       track.pause();
       track.currentTime = 0;
+      track.parentElement.classList.remove('playing'); // Remove icon from others
     }
   });
 
-  // Toggle Play/Pause for the clicked track
   if (audio.paused) {
     audio.play();
+    parentCard.classList.add('playing');
   } else {
     audio.pause();
+    parentCard.classList.remove('playing');
   }
 }
+
+// Automatically reset the icon when the song ends
+document.querySelectorAll('audio').forEach(track => {
+  track.onended = function() {
+    this.parentElement.classList.remove('playing');
+  };
+});
   </script>
 
 
