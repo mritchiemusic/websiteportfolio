@@ -49,9 +49,14 @@
     </div>
     
     <div class="album-grid">
-      <div class="album-item">
-        <img src="photos/albums/album_aura.jpeg" alt="Aura Album">
-      </div>
+      <div class="album-item" onclick="toggleAudio('track1')">
+        <img src="photos/albums/album_aura.jpeg" alt="Aura">
+        <div class="album-overlay">
+          <span class="play-icon">▶</span>
+        </div>
+        <audio id="Aura" src="music/aura.mp3"></audio>
+      </div>     
+
       <div class="album-item">
         <img src="photos/albums/album_deltawaves.jpeg" alt="Delta Waves Album">
       </div>    
@@ -75,6 +80,29 @@
   <footer>
     <p></p>
   </footer>
+
+  <script>
+function toggleAudio(id) {
+  const audio = document.getElementById(id);
+  const allAudios = document.querySelectorAll('audio');
+
+  // Stop all other tracks from playing
+  allAudios.forEach(track => {
+    if (track !== audio) {
+      track.pause();
+      track.currentTime = 0;
+    }
+  });
+
+  // Toggle Play/Pause for the clicked track
+  if (audio.paused) {
+    audio.play();
+  } else {
+    audio.pause();
+  }
+}
+  </script>
+
 
 </body>
 </html>
