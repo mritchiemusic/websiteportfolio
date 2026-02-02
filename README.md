@@ -2,7 +2,7 @@
 A personal website for my portfolio and music.
 
 Pages include:
-Home
+About
 Portfolio
 Music
 Contact
