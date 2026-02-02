@@ -21,7 +21,7 @@
     <p></p>
 <div class="portfolio-grid">
 
-  <div class="portfolio-item" onclick="openProject('Space Explorers: The ISS Experience', '<B>VR</B>', 'Felix and Paul Studios, NASA', 'Spatial Sound Mixing, Sound Design, Foley, Editing', 'Winner for Outstanding Interactive Program at the 2021 Primetime Emmy Awards. A four part documentary filmed inside and outside the International Space Station over four years. This was the largest collaboration that NASA has done with a media company.', 'photos/portfolio_spaceexplorers.jpg')">
+  <div class="portfolio-item" onclick="openProject('Space Explorers: The ISS Experience', '<B>VR</B>', 'Felix and Paul Studios, NASA, Time', 'Spatial Sound Mixing, Sound Design, Foley, Editing', 'Winner for Outstanding Interactive Program at the 2021 Primetime Emmy Awards. A four part documentary filmed inside and outside the International Space Station over four years. This was the largest collaboration that NASA has done with a media company.', 'photos/portfolio_spaceexplorers.jpg')">
     <img src="photos/portfolio_spaceexplorers.jpg" alt="Space Explorers: The ISS Experience">
     <div class="overlay">
       <div class="text">
@@ -257,24 +257,38 @@
 function openProject(title, mediumArg, companyArg, roleArg, descriptionArg, imagePath) {
   const modalBody = document.getElementById("modal-body");
 
+  // Default to empty strings if no value provided
   const medium = mediumArg || '';
   const company = companyArg || '';
   const role = roleArg || '';
   const description = descriptionArg || '';
 
-  // Build info lines showing only values (no labels). Skip empties.
+  // Build info lines with descriptive labels
   const infoParts = [];
-  if (medium) infoParts.push(`<p class="meta">${medium}</p>`);
-  if (company) infoParts.push(`<p class="meta"><i>${company}</i></p>`);
-  if (role) infoParts.push(`<p class="meta"><i>${role}</i></p>`);
-  infoParts.push(`<p class="modal-desc">${description}</p>`);
+  
+  if (medium) {
+    infoParts.push(`<p class="meta"><strong>Media:</strong> <i>${medium}</i></p>`);
+  }
+  if (company) {
+    infoParts.push(`<p class="meta"><strong>Companies:</strong> <i>${company}</i></p>`);
+  }
+  if (role) {
+    infoParts.push(`<p class="meta"><strong>Role:</strong> <i>${role}</i></p>`);
+  }
+  
+  // Add a separator or extra spacing before the description if desired
+  infoParts.push(`<div class="modal-desc-container"><p class="modal-desc">${description}</p></div>`);
 
   modalBody.innerHTML = `
     <div class="modal-inner">
-      <div class="modal-image"><img src="${imagePath}" alt="${title}"></div>
+      <div class="modal-image">
+        <img src="${imagePath}" alt="${title}">
+      </div>
       <div class="modal-info">
         <h1 class="modal-title">${title}</h1>
-        ${infoParts.join('')}
+        <div class="modal-metadata">
+          ${infoParts.join('')}
+        </div>
       </div>
     </div>
   `;
