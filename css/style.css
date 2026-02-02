@@ -28,7 +28,7 @@ nav a {
 
 /* CONTENT */
 .container {
-  max-width: 900px;
+  max-width: 800px;
   margin: auto;
   padding: 40px 20px;
 }
@@ -37,7 +37,6 @@ nav a {
 .about-section {
   display: block;
   margin-top: 40px;
-  width: 100%;
 }
 
 .about-image {
@@ -46,6 +45,7 @@ nav a {
   order: 1;
   display: flex;
   justify-content: center;
+  margin-bottom: 60px;
 }
 
 .about-image img {
@@ -56,8 +56,11 @@ nav a {
 }
 
 .about-text {
-  width: 100%;
+  font-family: 'Esteban', serif;
+  margin: 0;
+  line-height: 1.6;
   order: 2;
+  text-align: justify;
 }
 
 /* GLOBAL HEADING */
@@ -183,7 +186,6 @@ h3 {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 20px;
-  margin-top: 40px;
 }
 
 .album-item {
@@ -284,6 +286,11 @@ h3 {
   .contact-image img {
     max-width: 100%;
     height: auto;
+  }
+
+  .music-links {
+    gap: 10px;   
+    margin-top: 20px;
   }
 }
 
