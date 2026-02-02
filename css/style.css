@@ -1,3 +1,7 @@
+html {
+  overflow-y: scroll;
+}
+
 body {
   font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 0;
@@ -192,7 +196,7 @@ h3 {
   position: relative;
   overflow: hidden;
   aspect-ratio: 1 / 1;
-  cursor: pointer; /* Makes it clear it's clickable */
+  /* cursor: pointer;  Makes it clear it's clickable */
 }
 
 .album-item img {
@@ -226,7 +230,6 @@ h3 {
   transform: scale(1.05); /* Subtle zoom effect */
 }
 
-/* 1. Base style for the icon */
 .play-icon {
   color: white;
   font-size: 40px;
@@ -236,69 +239,20 @@ h3 {
   align-items: center;
 }
 
-/* 2. Default state: Play */
 .play-icon::before {
   content: "▶";
 }
 
-/* 3. Playing state: Switch content to Pause */
-/* This overrides the content above, so no "doubling" happens */
+
 .album-item.playing .play-icon::before {
   content: "⏸";
 }
 
-
-.contact-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 40px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.contact-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
-  max-width: 100%;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .about-section {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  
-  .about-image img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .contact-section {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  
-  .contact-image img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .music-links {
-    gap: 10px;   
-    margin-top: 20px;
-  }
-}
-
-/* Container for the 3-column grid */
+/* Portfolio */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-  gap: 20px; /* Space between images */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   padding: 20px;
 }
 
@@ -424,27 +378,24 @@ h3 {
   margin: 4px 0;
 }
 
-
-@media (max-width: 600px) {
-  .modal-content {
-    padding: 20px;
-    width: 92%;
-    max-width: 720px;
-  }
-
-  .modal-inner {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .modal-image img {
-    width: 100%;
-    max-height: 360px;
-    object-fit: cover;
-  }
+.contact-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* The 'X' Button */
+.contact-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
 .close-button {
   position: absolute;
   top: 15px;
@@ -467,8 +418,50 @@ h3 {
   max-width: 100%;
 }
 
-/* Mobile-only: make portfolio and album grids 2 columns with smaller gap */
+/* Mobile Responsive */
 @media (max-width: 600px) {
+  .about-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .about-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .contact-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .music-links {
+    gap: 10px;   
+    margin-top: 20px;
+  }
+
+  .modal-content {
+    padding: 20px;
+    width: 92%;
+    max-width: 720px;
+  }
+
+  .modal-inner {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .modal-image img {
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+  }
+
   .portfolio-grid,
   .album-grid {
     grid-template-columns: repeat(2, 1fr);
