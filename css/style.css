@@ -476,7 +476,7 @@ h3 {
     padding: 20px !important;  /* Massive hit area for thumbs */
     line-height: 0.8 !important; 
     z-index: 9999 !important;
-    color: #000; /* Ensure it's visible */
+    color: #ffffff; /* Ensure it's visible */
   }
 
 }
