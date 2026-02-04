@@ -469,11 +469,14 @@ h3 {
     padding: 12px;
   }
 
-  .close-button {
-    font-size: 50px; /* Larger visual X */
-    top: 10px;      /* Slightly adjusted for thumb reach */
-    right: 15px;
-    padding: 10px;  /* Increases the invisible touch-sensitive area */
+.close-button {
+    font-size: 60px !important; /* Made even larger to test */
+    top: 5px !important;
+    right: 10px !important;
+    padding: 20px !important;  /* Massive hit area for thumbs */
+    line-height: 0.8 !important; 
+    z-index: 9999 !important;
+    color: #000; /* Ensure it's visible */
   }
 
 }
