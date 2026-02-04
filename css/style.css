@@ -469,4 +469,11 @@ h3 {
     gap: 10px;
     padding: 12px;
   }
+
+  .close-button {
+    font-size: 50px; /* Larger visual X */
+    top: 10px;      /* Slightly adjusted for thumb reach */
+    right: 15px;
+    padding: 10px;  /* Increases the invisible touch-sensitive area */
+  }
 }
