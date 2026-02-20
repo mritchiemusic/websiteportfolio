@@ -256,17 +256,16 @@ h3 {
   padding: 20px;
 }
 
-/* Individual Project Square */
 .portfolio-item {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 1 / 1; /* Makes the link a perfect square */
+  aspect-ratio: 1 / 1;
 }
 
 .portfolio-item img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Prevents image distortion */
+  object-fit: contain;
   display: block;
 }
 
@@ -282,7 +281,6 @@ h3 {
   
   display: flex;
   flex-direction: column; 
-  /* In COLUMN mode: */
   justify-content: flex-end; /* Vertical: Pushes text to the BOTTOM */
   align-items: flex-start;    /* Horizontal: Pushes text to the LEFT */
   
@@ -293,18 +291,18 @@ h3 {
 
 .overlay .text {
   color: white;
-  width: 100%; /* Ensures text takes up full width for left-alignment */
+  width: 100%; 
 }
 
 .overlay h3 {
-  font-size: 0.7rem; /* Smaller */
+  font-size: 0.7rem;
   margin: 0 0 2px 0;
-  text-transform: uppercase; /* Optional: makes small text easier to read */
+  text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .overlay p {
-  font-size: 0.7rem; /* Very small */
+  font-size: 0.7rem;
   margin: 0;
   line-height: 1.2;
 }
@@ -325,24 +323,36 @@ h3 {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.9); /* Dark backdrop */
-  backdrop-filter: blur(5px); /* Optional: blurs the portfolio behind it */
+  backdrop-filter: blur(5px);
+}
+
+#projectModal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  overflow-y: auto; 
+  display: none;
 }
 
 /* The Content Box */
 .modal-content {
   background-color: #fff;
-  margin: 5% auto;
-  padding: 40px;
-  width: 80%;
-  max-width: 800px;
-  position: relative;
+  margin: 50px auto; /* Adds space at the top and bottom */
+  padding: 20px;
+  width: 90%;
+  max-width: 1000px;
   border-radius: 8px;
-  color: #333;
+  position: relative;
+  min-height: min-content; 
 }
 
-/* Modal inner layout: image left (300px) and text on the right */
 .modal-inner {
   display: flex;
+  flex-direction: column;
   gap: 20px;
   align-items: flex-start;
 }
@@ -355,6 +365,14 @@ h3 {
   display: block;
 }
 
+.modal-extra-content {
+  width: 100%;
+  clear: both;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #444;
+}
+
 .modal-info {
   flex: 1 1 auto;
 }
@@ -362,7 +380,7 @@ h3 {
 .modal-info .modal-title {
   margin-top: 0;
   margin-bottom: 8px;
-  text-align: left; /* Override global centering for modal title */
+  text-align: left;
  font-size: 1.2rem;
 }
 
@@ -418,6 +436,25 @@ h3 {
   max-width: 100%;
 }
 
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  background: #000;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* Mobile Responsive */
 @media (max-width: 600px) {
   .about-section {
@@ -470,17 +507,16 @@ h3 {
   }
 
 .close-button {
-    font-size: 60px !important; /* Made even larger to test */
+    font-size: 60px !important;
     top: 5px !important;
     right: 10px !important;
-    padding: 20px !important;  /* Massive hit area for thumbs */
+    padding: 20px !important; 
     line-height: 0.8 !important; 
     z-index: 9999 !important;
-    color: #afafaf; /* Ensure it's visible */
+    color: #afafaf;
   }
 
 }
-
 
 .filter-controls {
   display: flex;
@@ -505,7 +541,6 @@ h3 {
   color: white;
 }
 
-/* For smooth filtering transitions */
 .portfolio-item {
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
