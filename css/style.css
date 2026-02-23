@@ -343,7 +343,7 @@ h3 {
   background-color: #fff;
   margin: 50px auto; /* Adds space at the top and bottom */
   padding: 20px;
-  width: 90%;
+  width: 100%;
   max-width: 1000px;
   border-radius: 8px;
   position: relative;
@@ -388,11 +388,11 @@ h3 {
   margin-top: 12px;
   color: #444;
   line-height: 1.5;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .modal-info .meta {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   margin: 4px 0;
 }
 
